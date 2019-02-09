@@ -5,7 +5,10 @@
   "private": true,
   "dependencies": {
     "egg": "^2.2.1",
-    "egg-scripts": "^2.5.0"
+    "egg-mongoose": "^3.1.1",
+    "egg-scripts": "^2.5.0",
+    "egg-view-ejs": "^2.0.0",
+    "oauth2-server": "^3.0.1"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -15,6 +18,10 @@
     "egg-mock": "^3.14.0",
     "eslint": "^4.11.0",
     "eslint-config-egg": "^6.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "webstorm-disable-index": "^1.2.0"
   },
   "engines": {
