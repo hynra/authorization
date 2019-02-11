@@ -100,7 +100,7 @@ module.exports = app => {
      * @returns {Promise<void>}
      */
     saveAuthorizationCode: async (code, client, user) => {
-      console.log('saveAuthorizationCode')
+      console.log('saveAuthorizationCode', code, client, user)
       const { Token, User, Code, Client } = app.model
       const codeDto = new Code({ ...code, client, user })
       return await codeDto.save()

@@ -4,13 +4,14 @@ const Controller = require('egg').Controller;
 
 class HomeController extends Controller {
   async index () {
-    await this.ctx.render('oauth/authorize.ejs')
+    await this.ctx.render('oauth/login')
   }
 
   async token () {
     const { ctx } = this
     let result
     try {
+      console.log('param', ctx.request.body)
       result = await ctx.curl(`${ctx.request.origin}/oauth2/token`, {
         method: 'POST',
         contentType: 'application/x-www-form-urlencoded',
@@ -22,12 +23,9 @@ class HomeController extends Controller {
         },
         dataType: 'json'
       })
-      if (result.data.error) {
-        ctx.body = result.data
-      }
+      ctx.session.token = ctx.body = result.data
     } catch (e) {
-      console.log(e)
-      await ctx.render('error.ejs')
+      await ctx.render('error')
     }
   }
 }

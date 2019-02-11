@@ -15,6 +15,11 @@ exports.oauth2 = {
 }
 
 exports.ejs = {
-  enable: true,
+  enable: false,
   package: 'egg-view-ejs',
+}
+
+exports.nunjucks = {
+  enable: true,
+  package: 'egg-view-nunjucks',
 }

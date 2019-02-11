@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authorize</title>
+    <link rel="stylesheet" href="../../public/style.css">
+</head>
+<body>
+<h1>Lossa 的授权验证平台</h1>
+<form accept-charset="UTF-8" method="post" action="/oauth2/session">
+    <label>
+        用户名：
+        <input type="text"
+               tabindex="1"
+               autocomplete="off"
+               name="username">
+    </label>
+    <label>
+        密码：
+        <input type="password"
+               tabindex="2"
+               autocomplete="off"
+               name="password">
+    </label>
+    <input type="submit" tabindex="3" value="登录呀"/>
+</form>
+</body>
+</html>

@@ -16,16 +16,13 @@ module.exports = appInfo => {
     }
   }
 
-  config.security = {
-    csrf: {
-      ignore: ctx => ctx.ip === '127.0.0.1'
-    }
-  }
-
   config.view = {
     mapping: {
-      '.ejs': 'ejs',
+      '.nj': 'nunjucks',
+      '.html': 'nunjucks'
     },
+    defaultExtension: '.html',
+    defaultViewEngine: 'nunjucks'
   }
 
   config.ejs = {}
