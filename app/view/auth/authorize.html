@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+<h1>Dashboard</h1>
+欢迎回来！
+app名字
+需要获取以下权限：
+<div>username:{{user.username}}</div>
+<div>phone:{{user.phone}}</div>
+<div>email:{{user.email}}</div>
+<br>
+<br>
+<div>client:{{client._id}}</div>
+<div>grants:{{client.grants}}</div>
+<div>redirectUris:{{client.redirectUris}}</div>
+<br>
+
+<div>query.client_id:{{query.client_id}}</div>
+<div>query.redirect_uri:{{query.redirect_uri}}</div>
+
+<form action="/oauth2/authorize" method="post">
+    <input type="hidden" name="response_type" id="response_type" value="code">
+    <input type="hidden" name="client_id" id="client_id" value="{{query.client_id}}">
+    <input type="hidden" name="redirect_uri" id="redirect_uri" value="{{query.redirect_uri}}"
+           class="form-control">
+    <input type="hidden" name="state" id="state" value="{{query.state}}" class="form-control">
+    <input type="hidden" name="scope" id="scope" value="{{query.scope}}">
+    <button type="submit" name="allowed" value="true" tabindex="1">授权</button>
+</form>
+<form action="/oauth2/authorize?allowed=false" method="post">
+    <button type="submit" name="allowed" value="false" tabindex="1">deny</button>
+</form>
+</body>
+</html>
