@@ -22,17 +22,22 @@ app名字
 <div>query.client_id:{{query.client_id}}</div>
 <div>query.redirect_uri:{{query.redirect_uri}}</div>
 
-<form action="/oauth2/authorize" method="post">
+<form method="post">
     <input type="hidden" name="response_type" id="response_type" value="code">
     <input type="hidden" name="client_id" id="client_id" value="{{query.client_id}}">
-    <input type="hidden" name="redirect_uri" id="redirect_uri" value="{{query.redirect_uri}}"
-           class="form-control">
+    <input type="hidden" name="redirect_uri" id="redirect_uri" value="{{query.redirect_uri}}">
     <input type="hidden" name="state" id="state" value="{{query.state}}" class="form-control">
     <input type="hidden" name="scope" id="scope" value="{{query.scope}}">
-    <button type="submit" name="allowed" value="true" tabindex="1">授权</button>
+    <button type="submit" formaction="/oauth2/authorize" tabindex="1">授权</button>
+    <button type="submit" formaction="/oauth2/authorize?allowed=false" tabindex="2">deny</button>
 </form>
-<form action="/oauth2/authorize?allowed=false" method="post">
-    <button type="submit" name="allowed" value="false" tabindex="1">deny</button>
-</form>
+
+<div>
+    <form method="post">
+
+        <button formmethod="post" formaction="/oauth2/logout">切换账户</button>
+    </form>
+</div>
+
 </body>
 </html>

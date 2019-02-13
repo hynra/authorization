@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Lossa 的授权验证平台</h1>
-<form accept-charset="UTF-8" method="post" action="/oauth2/session">
+<form accept-charset="UTF-8" method="post">
     <label>
         用户名：
         <input type="text"
@@ -22,7 +22,10 @@
                autocomplete="off"
                name="password">
     </label>
-    <input type="submit" tabindex="3" value="登录呀"/>
+    <button type="submit" tabindex="3" formaction="/oauth2/login">login</button>
+    <button formaction="/oauth2/register">注册用户</button>
 </form>
+
+
 </body>
 </html>
