@@ -33,11 +33,16 @@ app名字
 </form>
 
 <div>
-    <form method="post">
-
-        <button formmethod="post" formaction="/oauth2/logout">切换账户</button>
-    </form>
+    <button id="sessionDestroyButton" onclick="destroySession()">切换账户</button>
 </div>
 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    function destroySession () {
+        axios.delete('/session/{{user._id}}', {
+            headers: { 'x-csrf-token':`{{ctx.session.csrfToken}}` }
+        })
+    }
+</script>
 </body>
 </html>

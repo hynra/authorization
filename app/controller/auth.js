@@ -16,7 +16,7 @@ class AuthController extends Controller {
 
   async renderLoginOrAuthorize () {
     const { ctx, service } = this
-    const userId = ctx.session.userId
+    const { userId } = ctx.session
     try {
       if (userId) {
         const requestQueryParam = { ...ctx.request.query }
@@ -25,38 +25,13 @@ class AuthController extends Controller {
         this.checkAuthorizeParam(client, requestQueryParam)
         await ctx.render('auth/authorize', { user, client, query: requestQueryParam })
     } else {
-        await ctx.render('auth/login')
+        await ctx.render('session/create')
     }
     } catch (e) {
       await ctx.render('error', e)
     }
   }
 
-  async loginSession () {
-    const { ctx } = this
-    const { User } = this.app.model
-    const { username, password } = ctx.request.body
-    try {
-      const user = await User.findOne({ username, password })
-      if (user) {
-        ctx.session.userId = user._id
-      }
-      ctx.redirect(ctx.request.header.referer)
-    } catch (e) {
-      console.log('eeee', e)
-      await ctx.render('error', e)
-    }
-  }
-
-  async logoutSession () {
-    const { ctx } = this
-    try {
-      ctx.session.userId = null
-      ctx.redirect(ctx.request.header.referer)
-    } catch (e) {
-      await ctx.render('error', e)
-    }
-  }
 
 }
 
