@@ -3,6 +3,14 @@
 const Controller = require('egg').Controller
 
 class SessionController extends Controller {
+  async index () {
+    const { ctx } = this
+    const { userId } = ctx.session
+    const { User } = this.app.model
+    const user = await User.findOne(({ _id: userId }))
+    ctx.redirect(`/user/${user.username}`)
+  }
+
   async create () {
     const { ctx } = this
     const { User } = this.app.model
