@@ -12,7 +12,6 @@ module.exports = options => {
       await next()
       return
     }
-    console.log('fff')
     await ctx.render('/session/create')
   }
 }

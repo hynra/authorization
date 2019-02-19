@@ -57,6 +57,7 @@ class AppBootHook {
       _id: '5c5ad7ad4f8a4ed38c303a50',
       username: 'admin',
       password: 'chuanpeng@zhu',
+      nickname: '管理员',
       phone: '15566968763',
       email: 'lossa@gmail.com'
     })

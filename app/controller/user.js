@@ -22,6 +22,20 @@ class UserController extends Controller {
 
   }
 
+  async create () {
+    const { ctx, service } = this
+    const { username, password } = ctx.request.body
+
+    const user = await service.user.createUser({
+      username,
+      password,
+    })
+    if (user) {
+      ctx.session.userId = user._id
+    }
+    ctx.redirect(`/user/${user.username}`)
+  }
+
 }
 
 module.exports = UserController

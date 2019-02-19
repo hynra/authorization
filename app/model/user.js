@@ -12,6 +12,7 @@ module.exports = app => {
     id: Schema.Types.ObjectId,
     username: { type: String },
     password: { type: String },
+    nickname: { type: String },
     phone: String,
     email: String
 

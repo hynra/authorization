@@ -5,8 +5,12 @@ const Controller = require('egg').Controller
 class HomeController extends Controller {
 
   async index () {
-    const { ctx } = this
-    await ctx.render('home')
+    const { ctx, service } = this
+    const { id } = ctx.params
+    const { userId } = ctx.session
+    const user = await service.user.getUserById(userId)
+
+    await ctx.render('home', { user })
   }
 
 }
