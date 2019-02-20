@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ERROR</title>
-</head>
-<body>
+{% extends "index.html" %}
+
+
+{% block title %}
+首页
+{% endblock %}
+
+{% block content %}
 <h1>出错啦！</h1>
 {{e.message}}
-</body>
-</html>
+{% endblock %}

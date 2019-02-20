@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Home</title>
-</head>
-<body>
+{% extends "index.html" %}
 
+
+{% block title %}
+首页
+{% endblock %}
+
+
+{% block content %}
 <header>
   {{user}}
   <a href="/user/new">注册</a>
   <a href="/session">登录</a>
 </header>
 <h1>你好，欢迎来到我的平台</h1>
-</body>
-</html>
+{% endblock %}
+

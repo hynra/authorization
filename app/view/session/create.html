@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Authorize</title>
-    <link rel="stylesheet" href="../../public/style.css">
-</head>
-<body>
+{% extends "index.html" %}
+
+{% block title %}
+登录
+{% endblock %}
+
+{% block content %}
 <h1>Lossa 的授权验证平台</h1>
 <form accept-charset="UTF-8" method="post">
     <label>
@@ -25,7 +24,4 @@
     <button type="submit" tabindex="3" formaction="/session">login</button>
     <a href="/user/new">注册用户</a>
 </form>
-
-
-</body>
-</html>
+{% endblock%}

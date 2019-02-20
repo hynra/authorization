@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>User</title>
-</head>
-<body>
+{% extends "index.html" %}
+
+
+{% block title %}
+用户首页
+{% endblock %}
+
+
+{% block content %}
 <h1>我的主页</h1>
 {{user}}
 <div>用户名：{{user.username}}</div>
@@ -12,5 +14,4 @@
 <div>用户密码：{{user.password}}</div>
 <div>用户电话：{{user.phone}}</div>
 <div>用户邮箱：{{user.email}}</div>
-</body>
-</html>
+{% endblock %}
