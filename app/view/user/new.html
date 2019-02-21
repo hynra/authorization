@@ -5,19 +5,30 @@
 注册
 {% endblock %}
 
+
 {% block content %}
 
 <h1>欢迎来到注册页面</h1>
 <form>
   <div>
-    <label>用户名<input name="username" type="text"></label>
+    <label>
+      <span>用户名</span>
+      <input name="username" type="text">
+    </label>
   </div>
   <div>
-    <label>密码<input name="password" type="text"></label>
+    <label>
+      <span>密码</span>
+      <input name="password" type="text">
+    </label>
   </div>
   <div>
-    <label>重复密码<input name="rePassword" type="text"></label>
+    <label>
+      <span>重复密码</span>
+      <input name="rePassword" type="text">
+    </label>
   </div>
   <button type="submit" formmethod="post" formaction="/user">注册</button>
 </form>
+
 {% endblock %}

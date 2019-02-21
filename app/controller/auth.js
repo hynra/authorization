@@ -25,7 +25,7 @@ class AuthController extends Controller {
         this.checkAuthorizeParam(client, requestQueryParam)
         await ctx.render('auth/authorize', { user, client, query: requestQueryParam })
     } else {
-        await ctx.render('session/create')
+        await ctx.render('session/new')
     }
     } catch (e) {
       await ctx.render('error', e)

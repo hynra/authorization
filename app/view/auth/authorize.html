@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-</head>
-<body>
+{% extends "index.html" %}
+
+
+{% block title %}
+授权登录
+{% endblock %}
+
+
+{% block content %}
 <h1>Dashboard</h1>
 欢迎回来！
 app名字
@@ -44,5 +46,5 @@ app名字
         })
     }
 </script>
-</body>
-</html>
+
+{% endblock %}
