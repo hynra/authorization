@@ -4,12 +4,23 @@ class UserService extends Service {
   async getUserById (userId) {
     const { User } = this.app.model
     const user = await User.findById(userId)
+      .select('-_id')
+    console.log('userGET', user)
     return user
+  }
+
+  async getUserId (username, password) {
+    const { User } = this.app.model
+    const user = await User.findOne({ username, password })
+      .select('id')
+    return user.id
   }
 
   async getUser (userObject) {
     const { User } = this.app.model
     const user = await User.findOne(userObject)
+      .select('-_id')
+    console.log('userGET', user)
     return user
   }
 

@@ -59,7 +59,8 @@ class AppBootHook {
       password: 'chuanpeng@zhu',
       nickname: '管理员',
       phone: '15566968763',
-      email: 'lossa@gmail.com'
+      email: 'lossa@gmail.com',
+      profilePicture: '/public/assets/profile.jpeg',
     })
   }
 

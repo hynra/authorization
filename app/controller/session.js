@@ -4,22 +4,21 @@ const Controller = require('egg').Controller
 
 class SessionController extends Controller {
   async index () {
-    const { ctx } = this
+    const { ctx, service } = this
     const { userId } = ctx.session
-    const { User } = this.app.model
-    const user = await User.findOne(({ _id: userId }))
+    const user = await service.user.getUserById(userId)
     ctx.redirect(`/user/${user.username}`)
   }
 
   async create () {
-    const { ctx } = this
-    const { User } = this.app.model
+    const { ctx, service } = this
     const { username, password } = ctx.request.body
 
     try {
-      const user = await User.findOne({ username, password })
-      if (user) {
-        ctx.session.userId = user._id
+      const userId = await service.user.getUserId(username, password)
+      console.log('user', userId, username, password)
+      if (userId) {
+        ctx.session.userId = userId
       }
       ctx.redirect(ctx.request.header.referer)
     } catch (e) {

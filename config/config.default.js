@@ -10,7 +10,10 @@ module.exports = appInfo => {
   config.middleware = ['login']
 
   config.login = {
-    whiteList: ['/', '/user/new']
+    whiteList: [
+      '/',
+      '/user/new',
+    ]
   }
 
   config.mongoose = {
