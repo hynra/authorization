@@ -9,12 +9,21 @@ header {
 }
 
 header > .logo {
+    display: inline-block;
+}
+
+header > .logo > img {
     width: 60px;
     height: 60px;
 }
 
-header > .user-information{
+header > .user-information {
+    display: inline-block;
+}
 
+header > .user-information img {
+    width: 60px;
+    height: 60px;
 }
 
 label > span {

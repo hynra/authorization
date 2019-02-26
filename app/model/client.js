@@ -9,14 +9,16 @@
 module.exports = app => {
   const mongoose = app.mongoose
   const Schema = mongoose.Schema
+  const { ObjectId, String, Buffer } = Schema.Types
 
   const ClientSchema = new Schema({
-    id: Schema.Types.ObjectId,
-    clientSecret: String,
-    redirectUris: [String],
-    grants: [String],
-    accessTokenLifetime: Number,
-    refreshTokenLifetime: Number
+    id: { type: ObjectId },
+    clientName: { type: String, required: true },
+    clientSecret: { type: String },
+    redirectUris: { type: [String] },
+    grants: { type: [String] },
+    accessTokenLifetime: { type: Number },
+    refreshTokenLifetime: { type: Number }
   })
 
   return mongoose.model('Client', ClientSchema)

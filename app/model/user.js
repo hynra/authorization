@@ -13,8 +13,8 @@ module.exports = app => {
     password: { type: String, select: false },
     nickname: { type: String },
     profilePicture: { type: String },
-    phone: String,
-    email: String
+    phone: { type: String },
+    email: { type: String },
   })
   return mongoose.model('User', userSchema)
 }

@@ -36,6 +36,7 @@ class AppBootHook {
       })
     const self = new Client({
       _id: '5c5a5d1e56aec1cc1cb9c61d',
+      clientName: '管理员后台',
       redirectUris: ['http://www.baidu.com'],
       grants: ['authorization_code',
         'client_credentials',

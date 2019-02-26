@@ -12,15 +12,16 @@
 module.exports = app => {
   const mongoose = app.mongoose
   const Schema = mongoose.Schema
+  const { ObjectId, String } = Schema.Types
 
   const tokenSchema = new Schema({
-    accessToken: String,
-    accessTokenExpiresAt: Date,
-    refreshToken: String,
-    refreshTokenExpiresAt: Date,
-    scope: Number,
-    client: { type: Schema.Types.ObjectId, ref: 'Client' },
-    user: { type: Schema.Types.ObjectId, ref: 'User' }
+    accessToken: { type: String },
+    accessTokenExpiresAt: { type: Date },
+    refreshToken: { type: String },
+    refreshTokenExpiresAt: { type: Date },
+    scope: { type: Number },
+    client: { type: ObjectId, ref: 'Client' },
+    user: { type: ObjectId, ref: 'User' }
   })
   return mongoose.model('Token', tokenSchema)
 }

@@ -7,23 +7,6 @@
 
 
 {% block content %}
-<header>
-  {% if user %}
-  <div class="logo">
-    <img src="../public/assets/logo.svg" alt="LOGO">
-  </div>
-  <div class="user-information">
-    <span>{{user.nickname}}</span>
-    <a href="/user/{{user.username}}">
-      <img src="../public/assets/profile.jpeg" alt="LOGO">
-    </a>
-  </div>
-
-  {% else %}
-  <a href="/user/new">注册</a>
-  <a href="/session">登录</a>
-  {% endif %}
-</header>
 <h1>你好，欢迎来到我的平台</h1>
 {% endblock %}
 

@@ -29,6 +29,7 @@ class UserController extends Controller {
     const user = await service.user.createUser({
       username,
       password,
+      profilePicture: ctx.helper.getDefaultProfilePicture()
     })
     if (user) {
       ctx.session.userId = user._id

@@ -7,7 +7,11 @@ class SessionController extends Controller {
     const { ctx, service } = this
     const { userId } = ctx.session
     const user = await service.user.getUserById(userId)
-    ctx.redirect(`/user/${user.username}`)
+    if (user) {
+      ctx.redirect(`/user/${user.username}`)
+    } else {
+      await this.destroy()
+    }
   }
 
   async create () {

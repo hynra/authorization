@@ -13,10 +13,10 @@ module.exports = app => {
   const Schema = mongoose.Schema
 
   const CodeSchema = new Schema({
-    authorizationCode: String,
-    expiresAt: Date,
-    redirectUri: String,
-    scope: String,
+    authorizationCode: { type: String },
+    expiresAt: { type: Date },
+    redirectUri: { type: String },
+    scope: { type: String },
     client: { type: Schema.Types.ObjectId, ref: 'Client' },
     user: { type: Schema.Types.ObjectId, ref: 'User' }
   })

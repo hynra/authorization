@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+
+{% block title %}
+Application
+{% endblock %}
+
+
+{% block content %}
+<form>
+  <div>
+    <label>
+      <span>Application Name</span>
+      <input name="clientName" type="text">
+    </label>
+  </div>
+  <div>
+    <label>
+      <span>Homepage URL</span>
+      <input name="homePage" type="text">
+    </label>
+  </div>
+  <div>
+    <label>
+      <span>Authorization callback URL</span>
+      <input name="redirectUri" type="text">
+    </label>
+  </div>
+  <button type="submit" formmethod="post" formaction="/client">创建应用</button>
+</form>
+
+{% endblock %}

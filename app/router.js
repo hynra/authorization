@@ -20,4 +20,5 @@ module.exports = app => {
 
   router.resources('/session', controller.session)
   router.resources('/user', controller.user)
+  router.resources('/client', controller.client)
 }
