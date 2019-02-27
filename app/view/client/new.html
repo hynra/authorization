@@ -7,6 +7,7 @@ Application
 
 
 {% block content %}
+{% include "./menu.html" %}
 <form>
   <div>
     <label>
@@ -18,6 +19,12 @@ Application
     <label>
       <span>Homepage URL</span>
       <input name="homePage" type="text">
+    </label>
+  </div>
+  <div>
+    <label>
+      <span>Authorization callback URL</span>
+      <textarea name="description"></textarea>
     </label>
   </div>
   <div>

@@ -5,7 +5,6 @@ class UserService extends Service {
     const { User } = this.app.model
     const user = await User.findById(userId)
       .select('-_id')
-    console.log('userGET', user)
     return user
   }
 
@@ -20,7 +19,6 @@ class UserService extends Service {
     const { User } = this.app.model
     const user = await User.findOne(userObject)
       .select('-_id')
-    console.log('userGET', user)
     return user
   }
 

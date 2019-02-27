@@ -37,7 +37,10 @@ class AppBootHook {
     const self = new Client({
       _id: '5c5a5d1e56aec1cc1cb9c61d',
       clientName: '管理员后台',
+      clientSecret: 'qwertyuiop',
+      logo: '/public/assets/logo.svg',
       redirectUris: ['http://www.baidu.com'],
+      description: 'qwertyuiopasdfghjklzxcvbm',
       grants: ['authorization_code',
         'client_credentials',
         'refresh_token',
@@ -55,7 +58,7 @@ class AppBootHook {
         console.log('删除User', res)
       })
     User.create({
-      _id: '5c5ad7ad4f8a4ed38c303a50',
+      id: '5c5ad7ad4f8a4ed38c303a50',
       username: 'admin',
       password: 'chuanpeng@zhu',
       nickname: '管理员',

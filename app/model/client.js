@@ -12,9 +12,10 @@ module.exports = app => {
   const { ObjectId, String, Buffer } = Schema.Types
 
   const ClientSchema = new Schema({
-    id: { type: ObjectId },
     clientName: { type: String, required: true },
-    clientSecret: { type: String },
+    clientSecret: { type: String, required: true },
+    logo: { type: String },
+    description: { type: String },
     redirectUris: { type: [String] },
     grants: { type: [String] },
     accessTokenLifetime: { type: Number },

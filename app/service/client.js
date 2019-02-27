@@ -15,7 +15,7 @@ class ClientService extends Service {
 
   async getClientList (pageNumber = 0, pageSize = 10) {
     const { Client } = this.app.model
-    const clientList = await Client.findOne(clientObject)
+    const clientList = await Client.find()
     return clientList
   }
 

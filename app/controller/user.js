@@ -18,7 +18,7 @@ class UserController extends Controller {
     const { id } = ctx.params
     const { userId } = ctx.session
     const user = await service.user.getUser({ username: id })
-    await ctx.render('user/user', { user })
+    await ctx.render('user/show', { user })
 
   }
 

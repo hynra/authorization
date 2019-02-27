@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block title %}
+应用详情
+{% endblock %}
+
+{% block content %}
+<h1>应用列表页面</h1>
+
+{% include "./menu.html" %}
+
+{% for client in clientList %}
+{% include "./item.html" %}
+{% endfor %}
+
+{% endblock %}

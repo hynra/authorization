@@ -1,0 +1,48 @@
+{% extends "index.html" %}
+
+{% block title %}
+我的应用
+{% endblock %}
+
+{% block content %}
+<h1>应用详情页面</h1>
+<div> id:{{client.id}}</div>
+<div> secret:{{client.clientSecret}}</div>
+<div> accessTokenLifetime: {{client.accessTokenLifetime}}</div>
+<div>refreshTokenLifetime: {{client.refreshTokenLifetime}}</div>
+<div><img src="{{client.logo}}" alt="LOGO"></div>
+<form>
+
+  <div>
+    <label>名称：
+      <input type="text" value="{{client.clientName}}"/>
+    </label>
+
+  </div>
+  <div>
+    <label>redirectUris：
+      <input type="text" value="{{client.redirectUris}}"/>
+    </label>
+
+  </div>
+  <div>
+    <label>描述：
+      <textarea rows="4">{{client.description}}</textarea>
+    </label>
+
+  </div>
+  <input type="hidden" name="_method" value="PUT">
+</form>
+<button onclick="put()">保存修改</button>
+
+<script>
+  async function put () {
+    const put = await fetch('/client/{{client.id}}', {
+      method: 'PUT',
+      body: {}
+    })
+    console.log(put)
+  }
+</script>
+
+{% endblock %}
