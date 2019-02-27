@@ -31,7 +31,6 @@ class ClientController extends Controller {
       logo = ctx.helper.getDefaultApplicationLogo(),
       grants = ['authorization_code', 'client_credentials', 'refresh_token', 'password'],
       clientName,
-      homePage,
       description,
       redirectUri,
     } = ctx.request.body
@@ -42,7 +41,6 @@ class ClientController extends Controller {
       clientName,
       clientSecret,
       grants,
-      homePage,
       description,
       redirectUris,
     })
@@ -54,17 +52,21 @@ class ClientController extends Controller {
     const { id } = ctx.params
     const { userId } = ctx.session
 
-    console.log('ctx', ctx.query, ctx.params)
     const user = await service.user.getUserById(userId)
     const client = await service.client.getClientById(id)
     await ctx.render('/client/show', { user, client })
   }
 
   async update () {
-    console.log('in,,,,,')
     const { ctx, service } = this
-
     const { id } = ctx.params
+    const {
+      logo,
+      clientName,
+      grants,
+      description,
+      redirectUris,
+    } = ctx.request.body
     ctx.body = await service.client.getClientById(id)
   }
 }

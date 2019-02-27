@@ -6,6 +6,9 @@
 
 {% block content %}
 <h1>应用详情页面</h1>
+
+{% include "./menu.html" %}
+
 <div> id:{{client.id}}</div>
 <div> secret:{{client.clientSecret}}</div>
 <div> accessTokenLifetime: {{client.accessTokenLifetime}}</div>
@@ -32,8 +35,8 @@
 
   </div>
   <input type="hidden" name="_method" value="PUT">
+  <button onclick="put()">保存修改</button>
 </form>
-<button onclick="put()">保存修改</button>
 
 <script>
   async function put () {

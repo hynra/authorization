@@ -7,6 +7,8 @@ Application
 
 
 {% block content %}
+<h1>new应用页面</h1>
+
 {% include "./menu.html" %}
 <form>
   <div>
@@ -17,19 +19,13 @@ Application
   </div>
   <div>
     <label>
-      <span>Homepage URL</span>
-      <input name="homePage" type="text">
-    </label>
-  </div>
-  <div>
-    <label>
-      <span>Authorization callback URL</span>
+      <span>description</span>
       <textarea name="description"></textarea>
     </label>
   </div>
   <div>
     <label>
-      <span>Authorization callback URL</span>
+      <span>redirect uri</span>
       <input name="redirectUri" type="text">
     </label>
   </div>
