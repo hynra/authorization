@@ -1,0 +1,100 @@
+/** basic **************************************/
+
+.text-center {
+    text-align: center;
+}
+
+.text-middle {
+    vertical-align: middle;
+}
+
+.text-sub {
+    vertical-align: sub;
+}
+
+.text-end {
+    text-align: end;
+}
+
+.text-start {
+    text-align: start;
+}
+
+
+.inline-block {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
+.relative {
+    position: relative
+}
+
+.absolute {
+    position: absolute
+}
+
+.fixed {
+    position: fixed;
+}
+
+.flex {
+    display: flex
+}
+
+
+.auto {
+    width: auto;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.scroll-y {
+    overflow-y: scroll;
+}
+
+.font-t {
+    font-size: 10px !important;
+}
+
+.font-s {
+    font-size: 12px !important;
+}
+
+.font-m {
+    font-size: 14px !important;
+}
+
+.font-l {
+    font-size: 16px !important;
+}
+
+.font-xl {
+    font-size: 18px !important;
+}
+
+.font-xxl {
+    font-size: 20px !important;
+}
+
+.bold {
+    font-weight: bolder
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.height-100 {
+    height: 100%;
+}
+
+/** component **************************************/
+.border {
+    border: 1px solid red;
+}

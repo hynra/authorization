@@ -67,6 +67,7 @@ class ClientController extends Controller {
       description,
       redirectUris,
     } = ctx.request.body
+    console.log('in.....')
     ctx.body = await service.client.getClientById(id)
   }
 }

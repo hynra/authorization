@@ -13,9 +13,14 @@
 <div> secret:{{client.clientSecret}}</div>
 <div> accessTokenLifetime: {{client.accessTokenLifetime}}</div>
 <div>refreshTokenLifetime: {{client.refreshTokenLifetime}}</div>
-<div><img src="{{client.logo}}" alt="LOGO"></div>
 <form>
 
+  <div>
+    <label>LOGO
+      <img id="preview" src="{{client.logo}}" alt="LOGO">
+      <input type="file" name="logo" accept="image/*" onchange="previewLogo(event)">
+    </label>
+  </div>
   <div>
     <label>名称：
       <input type="text" value="{{client.clientName}}"/>
@@ -34,17 +39,24 @@
     </label>
 
   </div>
-  <input type="hidden" name="_method" value="PUT">
   <button onclick="put()">保存修改</button>
 </form>
 
 <script>
-  async function put () {
-    const put = await fetch('/client/{{client.id}}', {
+  function put () {
+    const logo =
+    fetch('/client/{{client.id}}', {
       method: 'PUT',
       body: {}
     })
-    console.log(put)
+      .then(res => {
+        console.log(res)
+      })
+  }
+
+  function previewLogo (event) {
+    const previewDom = document.querySelector('#preview')
+    previewDom.src = URL.createObjectURL(event.target.files[0])
   }
 </script>
 
