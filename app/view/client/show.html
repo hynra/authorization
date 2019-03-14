@@ -1,11 +1,11 @@
 {% extends "index.html" %}
 
 {% block title %}
-我的应用
+My apps
 {% endblock %}
 
 {% block content %}
-<h1>应用详情页面</h1>
+<h1>Application details page</h1>
 
 {% include "./menu.html" %}
 
@@ -22,7 +22,7 @@
     </label>
   </div>
   <div>
-    <label>名称：
+    <label>name:
       <input type="text" value="{{client.clientName}}"/>
     </label>
 
@@ -34,12 +34,12 @@
 
   </div>
   <div>
-    <label>描述：
+    <label>description:
       <textarea rows="4">{{client.description}}</textarea>
     </label>
 
   </div>
-  <button onclick="put()">保存修改</button>
+  <button onclick="put()">Save changes</button>
 </form>
 
 <script>

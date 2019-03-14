@@ -2,21 +2,21 @@
 
 
 {% block title %}
-用户首页
+User homepage
 {% endblock %}
 
 
 {% block content %}
-<h1>我的主页</h1>
-<div>用户名：{{user.username}}</div>
-<div>用户昵称：{{user.nickname}}</div>
-<div>用户密码：{{user.password}}</div>
-<div>用户电话：{{user.phone}}</div>
-<div>用户邮箱：{{user.email}}</div>
+<h1>my home page</h1>
+<div>username: {{user.username}}</div>
+<div>User's Nickname: {{user.nickname}}</div>
+<div>user's password: {{user.password}}</div>
+<div>User's phone number: {{user.phone}}</div>
+<div>User's email: {{user.email}}</div>
 <img src="{{user.profilePicture}}" alt="Profile Picture">
 
 <div>
 
-<a href="/client">我的应用</a>
+<a href="/client">My apps</a>
 </div>
 {% endblock %}

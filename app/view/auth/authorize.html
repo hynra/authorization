@@ -2,15 +2,15 @@
 
 
 {% block title %}
-授权登录
+Authorized login
 {% endblock %}
 
 
 {% block content %}
 <h1>Dashboard</h1>
-欢迎回来！
-app名字
-需要获取以下权限：
+Welcome back!
+app
+Need to get the following permissions:
 <div>username:{{user.username}}</div>
 <div>phone:{{user.phone}}</div>
 <div>email:{{user.email}}</div>
@@ -30,12 +30,12 @@ app名字
     <input type="hidden" name="redirect_uri" id="redirect_uri" value="{{query.redirect_uri}}">
     <input type="hidden" name="state" id="state" value="{{query.state}}" class="form-control">
     <input type="hidden" name="scope" id="scope" value="{{query.scope}}">
-    <button type="submit" formaction="/oauth2/authorize" tabindex="1">授权</button>
+    <button type="submit" formaction="/oauth2/authorize" tabindex="1">Authorization</button>
     <button type="submit" formaction="/oauth2/authorize?allowed=false" tabindex="2">deny</button>
 </form>
 
 <div>
-    <button id="sessionDestroyButton" onclick="destroySession()">切换账户</button>
+    <button id="sessionDestroyButton" onclick="destroySession()">Switch account</button>
 </div>
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
